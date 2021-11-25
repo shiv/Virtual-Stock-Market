@@ -33,11 +33,10 @@ export const register = form => {
 export const user = () => {
   return axios.get('/user')
   .then ( res => {
-    console.log(res.data)
     return res.data
   })
   .catch( e => {
-    throw e.response
+    throw e.response.data
   })
 }
 
@@ -47,7 +46,7 @@ export const getCash = () => {
     return res.data
   })
   .catch( e => {
-    throw e.response
+    throw e.response.data
   })
 }
 
@@ -57,7 +56,7 @@ export const getPortfolio = () => {
     return res.data
   })
   .catch( e => {
-    throw e.response
+    throw e.response.data
   })
 }
 
@@ -67,6 +66,16 @@ export const getTransactions = () => {
     return res.data
   })
   .catch( e => {
-    throw e.response
+    throw e.response.data
+  })
+}
+
+export const buyStock = form => {
+  return axios.post('/stock/buy', form)
+  .then( res => {
+    return res.data
+  })
+  .catch( e => {
+    throw e.response.data
   })
 }
