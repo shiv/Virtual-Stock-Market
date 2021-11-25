@@ -1,17 +1,21 @@
 const express = require('express');
 const router = express.Router();
 const { login, register } = require('../models/user')
-const { jwtAuth, getToken} = require('../auth')
+const { getToken } = require('../auth')
+const { findUser } = require('../models/user')
 
-router.use(jwtAuth)
+router.get('/', (req, res) => {
+  res.json(res.locals.user)
+})
 
-router.post('/login', (req, res, next) => {
+router.post('/login', (req, res) => {
   const { email, password } = req.body
   login(email, password)
   .then( message => {
     res.json({
       success: message,
-      token: getToken(email)
+      token: getToken(email),
+      user: findUser(email)
     })  
   })
   .catch( e => {
@@ -25,7 +29,8 @@ router.post('/register', (req, res, next) => {
   .then( message => {
     res.json({
       success: message,
-      token: getToken(email)
+      token: getToken(email),
+      user: findUser(email)
     })
   })
   .catch( e => {

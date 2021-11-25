@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Row, Col, Input, Button, Icon, Form } from 'antd'
+import PropTypes from 'prop-types'
+import { Row, Col, Input, Button, Icon, Form, Alert } from 'antd'
 
 class Login extends Component {
 
@@ -7,18 +8,30 @@ class Login extends Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values);
+        this.props.loginUser(values)
       }
     });
   }
 
   render(){
     const { getFieldDecorator } = this.props.form;
+    const { isLoggedIn, message } = this.props;
+    console.log(this.props)
     return(
       <Row justify="space-around" type="flex">
         <Col span={8} className="form login">
+          { !isLoggedIn ?
           <Form onSubmit={this.handleSubmit}>
             <h2 className="title">Login</h2>
+            {
+              message.type === 'login error' &&
+              <Alert
+                message="Failed"
+                description={message.status}
+                type="error"
+                showIcon
+              />
+            }
             <Form.Item>
               {getFieldDecorator('email', {
                 rules: [
@@ -46,11 +59,34 @@ class Login extends Component {
               )}
             </Form.Item>
             <Button block htmlType="submit" size="large">Login</Button>
-          </Form>
+          </Form> :
+          (
+            //alert for success/failure
+            console.log('message', message.type == "login success"),
+            [message.type == "login success" && ( 
+            <Alert
+              message="Success"
+              description={message.status}
+              type="success"
+              showIcon
+            /> ),
+            message.type == "" && (
+            <Alert
+              message="Warning"
+              description="This account is already logged in"
+              type="warning"
+              showIcon
+            />)]
+          )
+          }
         </Col>
       </Row>
     )
   }
+}
+
+Login.propTypes = {
+  loginUser: PropTypes.func.isRequired
 }
 
 export default Form.create({name: 'login'})(Login)
