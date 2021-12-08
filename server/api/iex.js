@@ -1,14 +1,8 @@
 const axios = require('axios')
 
-axios.defaults.baseURL= 'https://cloud.iexapis.com/'
-
-const head = {
-  params: {token: `sk_9ea8560c42ac4d138a471382e018b082`}
-}
-
 const getStockQuotes = (symbols) => {
   let proms = symbols.map( v=>
-    axios.get(`stable/stock/${v}/quote`, head)
+    axios.get(`https://api.iextrading.com/1.0/stock/${v}/quote`)
     .then( res=> {
       return {
         symbol: res.data.symbol,
@@ -18,7 +12,6 @@ const getStockQuotes = (symbols) => {
       }
     })
     .catch( err => {
-      console.log(err.response.data)
       return err.response.data
     })
   )
@@ -38,7 +31,7 @@ const getStockQuotes = (symbols) => {
 }
 
 const getStockQuote = (symbol) => {
-  return axios.get(`stable/stock/${symbol}/quote`, head)
+  return axios.get(`https://api.iextrading.com/1.0/stock/${symbol}/quote`)
   .then( res => {
     return {
       symbol: res.data.symbol,
