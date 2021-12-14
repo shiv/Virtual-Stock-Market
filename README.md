@@ -25,16 +25,16 @@ This is a full-stack demo of a stock web application that allow users to buy sto
 ## Interfaces Implemented:
 
 ### Portfolio Page
-![portfolio](https://github.com/shiv/Virtual-Stock-Demo/blob/master/assets/portfolio.png)
+![portfolio](https://github.com/shiv/Virtual-Stock-Market/blob/master/assets/portfolio.png)
 
 ### Transaction Page
-![Transactions](https://github.com/shiv/Virtual-Stock-Demo/blob/master/assets/transactions.png)
+![Transactions](https://github.com/shiv/Virtual-Stock-Market/blob/master/assets/transactions.png)
 
 ### Login Page
-![Login](https://github.com/shiv/Virtual-Stock-Demo/blob/master/assets/login.png)
+![Login](https://github.com/shiv/Virtual-Stock-Market/blob/master/assets/login.png)
 
 ### Register Page
-![Register](https://github.com/shiv/Virtual-Stock-Demo/blob/master/assets/register.png)
+![Register](https://github.com/shiv/Virtual-Stock-Market/blob/master/assets/register.png)
 
 ## Bugs to be fixed
  - Missing functionality of dealing with expired JWT token, as they cannot be automatically cleared so far.
