@@ -1,4 +1,4 @@
-# Virtual Stock Demo
+# Virtual Stock Market
 
 A virtual Stock market built by MERN stack (MongoDB, Express, React, Node) that allows users to use virtual money to buy stocks in real market (using IEX Trading APIs).<br>
 Some dependencies used: Redux, Ant Design, axios, JWT WebToken, etc.
@@ -12,7 +12,7 @@ Some dependencies used: Redux, Ant Design, axios, JWT WebToken, etc.
 cd server && yarn dev
 
 # frontend
-cd client && yarn start
+cd client && yarn start 
 
 # also make sure that mongodb is installed and there should be a db called ttp-test
 
@@ -25,16 +25,16 @@ This is a full-stack demo of a stock web application that allow users to buy sto
 ## Interfaces Implemented:
 
 ### Portfolio Page
-![portfolio](https://github.com/ThisZW/virtual-stock-demo/blob/master/assets/portfolio.png)
+![portfolio](https://github.com/shiv/virtual-stock-market/blob/master/assets/portfolio.png)
 
 ### Transaction Page
-![Transactions](https://github.com/ThisZW/virtual-stock-demo/blob/master/assets/transactions.png)
+![Transactions](https://github.com/shiv/virtual-stock-market/blob/master/assets/transactions.png)
 
 ### Login Page
-![Login](https://github.com/ThisZW/virtual-stock-demo/blob/master/assets/login.png)
+![Login](https://github.com/shiv/virtual-stock-market/blob/master/assets/login.png)
 
 ### Register Page
-![Register](https://github.com/ThisZW/virtual-stock-demo/blob/master/assets/register.png)
+![Register](https://github.com/shiv/virtual-stock-market/blob/master/assets/register.png)
 
 ## Bugs to be fixed
  - Missing functionality of dealing with expired JWT token, as they cannot be automatically cleared so far.
