@@ -1,7 +1,7 @@
 # Virtual Stock Market
 
 A virtual Stock market built by MERN stack (MongoDB, Express, React, Node) that allows users to use virtual money to buy stocks in real market (using IEX Trading APIs).<br>
-Some dependencies used: Redux, Ant Design, axios, JWT WebToken, etc.
+<!-- Some dependencies used: Redux, Ant Design, axios, JWT WebToken, etc. -->
 
 <!-- #### Online Demo https://virtual-stock-demo.herokuapp.com/ -->
 
