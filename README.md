@@ -36,5 +36,5 @@ This is a full-stack demo of a stock web application that allow users to buy sto
 ### Register Page
 ![Register](https://github.com/shiv/Virtual-Stock-Market/blob/master/assets/register.png)
 
-## Bugs to be fixed
- - Missing functionality of dealing with expired JWT token, as they cannot be automatically cleared so far.
+<!-- ## Bugs to be fixed
+ - Missing functionality of dealing with expired JWT token, as they cannot be automatically cleared so far. -->
